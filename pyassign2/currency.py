@@ -14,12 +14,10 @@ __email__ = "1800011734@pku.edu.cn"
 
 
 
-"""exchange函数：输入原货币 目标货币和金额，即可输出转换为目标货币的金额
-"""
 def exchange(currency_from,currency_to,amount_from):
+    """exchange函数：输入原货币 目标货币和金额，即可输出转换为目标货币的金额"""
     
-    """依据输入修改URL
-    """
+    """依据输入修改URL"""
     
     n = 'http://cs1110.cs.cornell.edu/2016fa/a1server.php?'
     n = n + 'from=' + currency_from + '&to=' + currency_to + '&amt=' + str(amount_from)
@@ -32,8 +30,7 @@ def exchange(currency_from,currency_to,amount_from):
     jstr = docstr.decode('ascii')
 
     
-    """输入格式不正确时，报错
-    """
+    """输入格式不正确时，报错"""
     
     if   'false' == jstr[38:43] :
         result = 'error'
@@ -49,8 +46,7 @@ def exchange(currency_from,currency_to,amount_from):
         return float(result)
 
     
-"""测试函数：通过三个已知输入、输出的检验，检验exchange函数是否能够正确地运行
-"""
+"""测试函数：通过三个已知输入、输出的检验，检验exchange函数是否能够正确地运行"""
 
 def text_A():
     assert(2.1589225 == exchange('USD','EUR','2.5'))
@@ -67,10 +63,9 @@ def textAll():
     text_C()
     print('All texts passed')
 
-"""main函数：程序的主模块
-"""
 
 def main():
+    """main函数：程序的主模块"""
     textAll()
     print(exchange(input('currency from:',),input('currency to:',),input('amount from:',)))
 
