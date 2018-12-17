@@ -33,7 +33,7 @@ def find_bricks(wall, m, a, b):
                     brick.append(i+x+y*m)
             if conflict(brick, wall, m, a) is True:
                 bricks.append(brick)
-        if r == 1:
+        elif r == 1 and not a == b:
             for y in range(a):
                 for x in range(b):
                     brick.append(i+x+y*m)
