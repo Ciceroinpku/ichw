@@ -34,6 +34,8 @@ def wcount(lines, topn=10):
             result[word] = 0
         result[word] += 1
     sortedresult = sorted(result, key=lambda x: result[x], reverse=True)  # Sort the keys, according to values.
+    if topn > len(sortedresult):
+        topn = len(sortedresult)
     for word in sortedresult[:topn]:
         print(word.ljust(10), str(result[word]).rjust(5))  # Adjust the alignment using ljust and rjust.
 
