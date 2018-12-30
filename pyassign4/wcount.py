@@ -23,8 +23,6 @@ def wcount(lines, topn=10):
                 newword += i
         wordlist.append(newword)
 
-    wordlist.remove('')  # Remove all the strings that have nothing inside.
-
     result = {}
     for word in wordlist:
         if len(word) > 2:
